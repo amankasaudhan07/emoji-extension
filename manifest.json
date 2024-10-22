@@ -1,0 +1,25 @@
+{
+    "manifest_version": 3,
+    "name": "Emoji Shortcut Manager",
+    "version": "1.0",
+    "description": "Quickly insert emojis using keyboard shortcuts.",
+    "permissions": ["storage","activeTab"],
+    "background": {
+      "service_worker": "src/background.js"
+    },
+    "action": {
+      "default_popup": "src/popup.html",
+      "default_icon": {
+        "16": "icon.png",
+        "48": "icon.png",
+        "128": "icon.png"
+      }
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["src/content.js"]
+      }
+    ]
+  }
+  
